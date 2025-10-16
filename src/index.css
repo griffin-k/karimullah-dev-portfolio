@@ -1,0 +1,570 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === PrimePass Background System === */
+:root {
+  /* Primary Background Colors */
+  --bg-primary: #0f0f23;
+  --bg-secondary: #1e1b4b;
+  --bg-tertiary: #000000;
+}
+
+/* Base Gradient Background */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  width: 100%;
+
+  /* Solid fallback */
+  background-color: var(--bg-primary);
+
+  /* Gradient background */
+  background-image: radial-gradient(
+    ellipse at top,
+    var(--bg-secondary) 0%,
+    var(--bg-primary) 50%,
+    var(--bg-tertiary) 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  overscroll-behavior: none;
+}
+
+/* Ensure gradient always stays fixed (like a parallax effect) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at top,
+    var(--bg-secondary) 0%,
+    var(--bg-primary) 50%,
+    var(--bg-tertiary) 100%
+  );
+  z-index: -1;
+}
+
+/* === Optional Pattern Overlay (Death Star Pattern) === */
+.death-star-pattern {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='105' viewBox='0 0 80 105'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='death-star' fill='%239C92AC' fill-opacity='0.15'%3E%3Cpath d='M20 10a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm15 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zM20 75a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zm30-65a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm0 65a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zM35 10a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zM5 45a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zm60 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: 60px 80px;
+  background-repeat: repeat;
+}
+
+/* Disable patterns on mobile or low data mode */
+@media (max-width: 480px), (prefers-reduced-data: reduce) {
+  .death-star-pattern {
+    background-image: none;
+    background-color: var(--bg-primary);
+  }
+}
+
+/* === Optional Particle Animation === */
+@keyframes particleFloat {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) scale(1); 
+    opacity: 1; 
+  }
+  50% { 
+    transform: translateY(-18px) translateX(10px) scale(1.1); 
+    opacity: 0.6; 
+  }
+}
+
+.hero-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle, 
+    rgba(139, 92, 246, 0.5) 0%, 
+    rgba(168, 85, 247, 0.3) 60%, 
+    transparent 70%
+  );
+  width: 20px;
+  height: 20px;
+  animation: particleFloat 6s ease-in-out infinite;
+  opacity: 0.3;
+  z-index: 0;
+  box-shadow: 
+    0 0 15px rgba(139, 92, 246, 0.3),
+    0 0 30px rgba(168, 85, 247, 0.15);
+  filter: blur(1px);
+}
+
+/* === PrimePass Glass Card System === */
+
+/* Core Glass Variables */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-blur: blur(8px);
+  --shadow-glass: 0px 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-inset: inset 0px 1px 0px rgba(255, 255, 255, 0.08);
+  --timing-fast: 0.3s;
+}
+
+/* === Base Glass Container === */
+.glass-container {
+  background-color: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-glass), var(--shadow-inset);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover Lift Effect */
+.glass-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Disable hover effect for footer */
+.footer-glass:hover {
+  transform: none;
+  box-shadow: var(--shadow-glass), var(--shadow-inset);
+}
+
+/* Subtle Highlight Overlay */
+.glass-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(145deg, rgba(255,255,255,0.04), transparent 70%);
+  pointer-events: none;
+}
+
+/* Inner Texture (frosted glass pattern) */
+.glass-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.02) 0,
+    rgba(255,255,255,0.02) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* === Glass Navigation Background === */
+.bg-glass-nav {
+  background-color: rgba(15, 15, 35, 0.8);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-glass), var(--shadow-inset);
+}
+
+/* === Glass Border Utility === */
+.border-glass-border {
+  border-color: var(--glass-border);
+}
+
+/* === Fallback for browsers without backdrop-filter === */
+@supports not (backdrop-filter: blur(8px)) {
+  .glass-container,
+  .bg-glass-nav {
+    background: rgba(15, 15, 35, 0.85) !important;
+    backdrop-filter: none !important;
+  }
+}
+
+/* === Mobile Performance Optimization === */
+@media (max-width: 768px) {
+  :root {
+    --glass-blur: blur(4px);
+  }
+  .glass-container {
+    box-shadow: var(--shadow-inset);
+  }
+}
+
+/* === High Contrast Support === */
+@media (prefers-contrast: high) {
+  .glass-container,
+  .bg-glass-nav {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* === Reduced Motion Support === */
+@media (prefers-reduced-motion: reduce) {
+  .glass-container {
+    transition: none !important;
+  }
+}
+
+/* === Shimmer Effect for Social Icons === */
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.shimmer-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 30%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.1) 70%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 4s infinite;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.shimmer-button:hover::before {
+  animation: shimmer 3s infinite;
+}
+
+/* Ensure content stays above shimmer */
+.shimmer-button > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Portfolio Design System - Dark Theme with Purple Accents */
+@layer base {
+  :root {
+    /* Dark Theme Colors */
+    --background: 228 25% 8%;          /* Deep navy background */
+    --foreground: 240 10% 96%;         /* Light text */
+    
+    --card: 228 20% 12%;               /* Card background */
+    --card-foreground: 240 10% 96%;    /* Card text */
+    
+    --popover: 228 20% 12%;
+    --popover-foreground: 240 10% 96%;
+    
+    /* Purple Accent System */
+    --primary: 262 83% 58%;            /* Primary purple */
+    --primary-foreground: 240 10% 96%;
+    --primary-glow: 262 83% 68%;       /* Lighter purple for glows */
+    
+    --secondary: 228 20% 15%;          /* Secondary cards */
+    --secondary-foreground: 240 5% 84%;
+    
+    --muted: 228 15% 18%;              /* Muted backgrounds */
+    --muted-foreground: 240 5% 64%;    /* Muted text */
+    
+    --accent: 262 83% 58%;             /* Accent color */
+    --accent-foreground: 240 10% 96%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 240 10% 96%;
+    
+    --border: 228 15% 22%;             /* Subtle borders */
+    --input: 228 15% 18%;
+    --ring: 262 83% 58%;
+    
+    --radius: 1rem;
+    
+    /* Custom Portfolio Colors */
+    --portfolio-bg: 228 25% 8%;        /* Main background */
+    --portfolio-card: 228 20% 12%;     /* Card backgrounds */
+    --portfolio-accent: 262 83% 58%;   /* Purple accent */
+    --portfolio-accent-hover: 262 83% 68%; /* Hover state */
+    --portfolio-text: 240 10% 96%;     /* Primary text */
+    --portfolio-text-muted: 240 5% 64%; /* Muted text */
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(250 100% 67%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(228 20% 12%) 0%, hsl(228 25% 15%) 100%);
+    --gradient-glow: linear-gradient(135deg, hsl(262 83% 58% / 0.3) 0%, hsl(250 100% 67% / 0.3) 100%);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 40px -10px hsl(262 83% 58% / 0.3);
+    --shadow-card: 0 8px 32px -8px hsl(228 25% 4% / 0.5);
+    --shadow-glow: 0 0 40px hsl(262 83% 58% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Optimize scrolling performance */
+    -webkit-overflow-scrolling: touch;
+    background-color: #0f0f23; /* Fallback color */
+    /* Prevent horizontal scroll */
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  body {
+    @apply text-foreground;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0f0f23; /* Fallback color */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Allow vertical scrolling */
+    overflow-y: auto;
+    position: relative;
+  }
+
+  /* Ensure main content is scrollable */
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Optimize rendering performance */
+  * {
+    will-change: auto;
+  }
+  
+  /* Improve image and animation performance */
+  img, video {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  
+  /* Optimize transitions */
+  .transition-all,
+  .transition-transform {
+    will-change: transform, opacity;
+  }
+
+  /* Optimize backdrop-filter performance */
+  [class*="backdrop-blur"] {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  /* Disable heavy effects on low-end devices */
+  @media (max-width: 768px) {
+    [class*="backdrop-blur"] {
+      backdrop-filter: blur(4px) !important;
+      -webkit-backdrop-filter: blur(4px) !important;
+    }
+    
+    .glass-container::after {
+      display: none; /* Remove texture pattern on mobile */
+    }
+  }
+
+  /* Reduce motion for accessibility and performance */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Low performance device optimizations */
+  @media (max-width: 480px) {
+    * {
+      will-change: auto !important;
+    }
+    
+    img {
+      image-rendering: auto;
+    }
+  }
+
+  /* Ensure proper viewport handling */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* Mobile-specific fixes */
+  @media (max-width: 768px) {
+    body {
+      font-size: 16px; /* Prevent zoom on iOS */
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* Prevent layout shift on mobile */
+    section {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* Optimize images for mobile */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Better touch targets */
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  /* Small mobile devices */
+  @media (max-width: 480px) {
+    .container {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  }
+}
+
+/* === Portfolio Card Animated Ring === */
+@keyframes draw-border {
+  0% {
+    clip-path: polygon(
+      0% 0%, 0% 0%, 0% 0%, 0% 0%
+    );
+  }
+  25% {
+    clip-path: polygon(
+      0% 0%, 100% 0%, 100% 0%, 0% 0%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      0% 0%, 100% 0%, 100% 100%, 0% 100%
+    );
+  }
+  75% {
+    clip-path: polygon(
+      0% 0%, 100% 0%, 100% 100%, 0% 100%
+    );
+  }
+  100% {
+    clip-path: polygon(
+      0% 0%, 100% 0%, 100% 100%, 0% 100%
+    );
+  }
+}
+
+.portfolio-card-wrapper {
+  position: relative;
+}
+
+.portfolio-card-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 1rem;
+  padding: 2px;
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa, #c4b5fd, #8b5cf6);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.portfolio-card-wrapper:hover::before {
+  opacity: 1;
+  animation: draw-border 1.5s ease-in-out forwards;
+}
+
+/* Auto-scrolling container */
+.scroller {
+  max-width: 100%;
+}
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller[data-animated="true"] .scroller-inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  display: flex;
+  animation: scroll 50s linear infinite;
+}
+
+.scroller:hover .scroller-inner {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem * 7)); /* 7 is the number of testimonials */
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .scroller[data-animated="true"] {
+    overflow-x: auto;
+  }
+  .scroller[data-animated="true"] .scroller-inner {
+    animation: none;
+    display: flex;
+  }
+}
