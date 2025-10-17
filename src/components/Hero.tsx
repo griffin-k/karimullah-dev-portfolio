@@ -5,12 +5,7 @@ import { Handshake, Github, Linkedin, Instagram } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import profileImage from "@/assets/profile-image.png";
 
-// Example client avatars (replace these with your actual images)
-import client1 from "@/assets/client1.png";
-import client2 from "@/assets/client1.png";
-import client3 from "@/assets/client1.png";
-import client4 from "@/assets/client1.png";
-import client5 from "@/assets/client1.png";
+
 
 const Hero = () => {
   const socialLinks = [
@@ -20,7 +15,7 @@ const Hero = () => {
     { icon: Instagram, href: "https://www.instagram.com/griffin___3" },
   ];
 
-  const clientAvatars = [client1, client2, client3, client4, client5];
+
 
   return (
     <section

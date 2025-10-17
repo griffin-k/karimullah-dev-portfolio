@@ -3,10 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Download, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
+
+import logo from "/favicon.png";
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [prevActiveSection, setPrevActiveSection] = useState("home");
+
+
   
   const navItems = [
     { label: "Home", href: "#hero", section: "home" },
@@ -62,7 +67,7 @@ const Header = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 bg-glass-nav"
+      className="fixed top-0 left-0 right-0 z-50 bg-glass-nav border-none"
     >
       <div className="container mx-auto px-2 sm:px-4 py-3 sm:py-4">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
@@ -73,9 +78,14 @@ const Header = () => {
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
             className="flex items-center space-x-2 flex-shrink-0"
           >
-        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-  <span className="text-white font-bold text-lg sm:text-xl" style={{ fontFamily: 'Ballet, cursive' }}>A</span>
+
+<div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center">
+  <img src={logo} alt="Logo" className="w-8 h-8 sm:w-10 sm:h-10" />
 </div>
+
+
+
+
           </motion.div>
 
           {/* Navigation */}

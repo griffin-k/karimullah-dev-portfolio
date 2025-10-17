@@ -4,10 +4,35 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
-import TradingAppImage from "@/assets/gears.png";
-import dashboardImage from "@/assets/gears.png";
-import dreamlensImage from "@/assets/gears.png";
-import trailtribeImage from "@/assets/lgubot.png";
+
+
+
+import NemoMockupImage from "@/assets/nemo_mockup.png";
+
+
+
+import alalimMockupImage from "@/assets/alalim_mockup.png";
+import alalimImage1 from "@/assets/alalim1.png";
+import alalimImage2 from "@/assets/alalim2.png";
+import alalimImage3 from "@/assets/alalim3.png";
+
+
+import glsmMockupImage from "@/assets/glsm_mockup.png";
+
+
+import primepassMockupImage from "@/assets/primepass_mockup.png";
+
+
+import gorbitMockupImage from "@/assets/gorbit_mockup.png";
+
+
+
+import gearsMockupImage from "@/assets/gears_mockup.png";
+
+
+
+
+
 
 const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -19,7 +44,7 @@ const Portfolio = () => {
       title: "Cryptocurrency Trading Platform",
       category: "Mobile Application",
       description: "A mobile app to trade, track, and manage cryptocurrencies in real-time with ease and security. Features include real-time price tracking, portfolio management, secure transactions, and detailed analytics.",
-      images: [TradingAppImage, TradingAppImage, TradingAppImage], // Add more images when available
+      images: [NemoMockupImage], // Add more images when available
       tags: ["User Research", "UI Design", "Mobile UX", "Prototyping"],
       demoLink: "#",
       codeLink: "#"
@@ -29,7 +54,7 @@ const Portfolio = () => {
       title: "Fleet Management Dashboard",
       category: "Web Page",
       description: "A smart dashboard to track, manage, and optimize fleet and logistics operations in real time. Includes vehicle tracking, driver management, fuel monitoring, and comprehensive reporting.",
-      images: [dashboardImage, dashboardImage, dashboardImage],
+      images: [alalimMockupImage,alalimImage1, alalimImage2, alalimImage3],
       tags: ["Dashboard Design", "Information Architecture", "Visual Design", "Usability Testing"],
       demoLink: "#",
       codeLink: "#"
@@ -39,7 +64,7 @@ const Portfolio = () => {
       title: "Dream Interpretation Website",
       category: "Web Application",
       description: "AI-powered dream interpretation platform combining mystical wisdom with modern technology. Users can log dreams, get AI interpretations, and explore dream symbolism.",
-      images: [dreamlensImage, dreamlensImage, dreamlensImage],
+      images: [glsmMockupImage],
       tags: ["UX Strategy", "User Journey", "Prototyping", "Interface Design"],
       demoLink: "#",
       codeLink: "#"
@@ -49,7 +74,7 @@ const Portfolio = () => {
       title: "TrailTribe Adventure Platform",
       category: "Web Application",
       description: "Community-driven hiking and outdoor adventure platform connecting nature enthusiasts worldwide. Features trail discovery, community reviews, and adventure planning.",
-      images: [trailtribeImage, trailtribeImage, trailtribeImage],
+      images: [gorbitMockupImage],
       tags: ["User Experience", "Interaction Design", "Design Systems", "Responsive Design"],
       demoLink: "#",
       codeLink: "#"
@@ -59,7 +84,7 @@ const Portfolio = () => {
       title: "InfoGator News Platform",
       category: "Mobile Application",
       description: "Modern news aggregation platform with personalized content feeds and real-time updates from multiple sources.",
-      images: [trailtribeImage, trailtribeImage, trailtribeImage], // Replace with actual images
+      images: [primepassMockupImage], // Replace with actual images
       tags: ["Java", "XML", "Firebase", "Canva"],
       demoLink: "#",
       codeLink: "#"
@@ -69,7 +94,7 @@ const Portfolio = () => {
       title: "Giving Hands Charity",
       category: "Web Application",
       description: "Charitable platform connecting donors with causes, featuring transparent donation tracking and impact metrics.",
-      images: [trailtribeImage, trailtribeImage, trailtribeImage], // Replace with actual images
+      images: [gearsMockupImage], // Replace with actual images
       tags: ["React", "Node.js", "MongoDB", "Stripe"],
       demoLink: "#",
       codeLink: "#"
