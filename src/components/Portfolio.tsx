@@ -41,62 +41,64 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "Cryptocurrency Trading Platform",
-      category: "Mobile Application",
-      description: "A mobile app to trade, track, and manage cryptocurrencies in real-time with ease and security. Features include real-time price tracking, portfolio management, secure transactions, and detailed analytics.",
+      title: "NEMO – Autonomous AI-Powered Personal Assistant Robot.",
+      category: "AI/IOT",
+      description: `Built an autonomous AI assistant powered by LLMs (LLaMA 3, Mistral, Gemini) with real-time interaction, RAG-based memory, and multimodal capabilities. Integrated vision, translation, scheduling, and navigation features, optimized for edge deployment on Raspberry Pi 5 using Python (FastAPI/Flask).`,
       images: [NemoMockupImage], // Add more images when available
-      tags: ["User Research", "UI Design", "Mobile UX", "Prototyping"],
+      tags: [
+        "Python", "FastAPI", "Flask", "LLMs", "LLaMA 3", "Mistral", "Gemini", "LangChain", "RAG", "Vector DB", "Computer Vision", "Object Detection", "Face Recognition", "Edge AI", "Raspberry Pi 5", "Sensors", "Multimodal"
+      ],
       demoLink: "#",
       codeLink: "#"
     },
     {
       id: 2,
-      title: "Fleet Management Dashboard",
+      title: "Al-Alim – AI Chatbot for Islamic Literature References",
       category: "Web Page",
-      description: "A smart dashboard to track, manage, and optimize fleet and logistics operations in real time. Includes vehicle tracking, driver management, fuel monitoring, and comprehensive reporting.",
+      description: `Developed an intelligent NLP-powered chatbot using LLMs to deliver authenticated Quran and Hadith references. Built a context-aware query system with vector databases for semantic search and accurate citation retrieval. Implemented using LangChain for smooth model–database coordination, and designed a web interface for scholars, students, and general users to access verified Islamic texts efficiently.`,
       images: [alalimMockupImage,alalimImage1, alalimImage2, alalimImage3],
-      tags: ["Dashboard Design", "Information Architecture", "Visual Design", "Usability Testing"],
+      tags: ["Dashboard Design", "Information Architecture", "RAG","Vector Database", "Usability Testing"],
       demoLink: "#",
       codeLink: "#"
     },
     {
       id: 3,
-      title: "Dream Interpretation Website",
+      title: "AI-Integrated Library Management System For Lahore Garrison University.",
       category: "Web Application",
-      description: "AI-powered dream interpretation platform combining mystical wisdom with modern technology. Users can log dreams, get AI interpretations, and explore dream symbolism.",
+      description: `Developed an AI-enhanced library management system using Django and Tailwind CSS. Built core modules for book and user management, borrowing workflows, fines, and role-based access control. Integrated an LLM for intelligent ISBN-based metadata extraction to improve catalog accuracy. Added real-time search, shelf tracking, tag generation, and Excel export features, resulting in a secure, scalable solution that improved library efficiency and user experience.`,
       images: [glsmMockupImage],
-      tags: ["UX Strategy", "User Journey", "Prototyping", "Interface Design"],
+      tags: ["LLMS", "Tailwind", "Prototyping", "Interface Design"],
       demoLink: "#",
       codeLink: "#"
     },
     {
       id: 4,
-      title: "TrailTribe Adventure Platform",
+      title: "Virtual Admission Assistant – RAG-Based AI System for Lahore Garrison University.",
       category: "Web Application",
-      description: "Community-driven hiking and outdoor adventure platform connecting nature enthusiasts worldwide. Features trail discovery, community reviews, and adventure planning.",
+      description: `Developed an AI-powered assistant to streamline the university admission process using Retrieval-Augmented Generation (RAG) with LangChain and vector embeddings. Built a web dashboard for document uploads, semantic embedding generation, and intelligent query handling. Enabled context-aware, LLM-driven support for admission criteria, deadlines, required documents, and campus policies—enhancing student experience with fast, accurate, and personalized guidance.`,
       images: [gorbitMockupImage],
-      tags: ["User Experience", "Interaction Design", "Design Systems", "Responsive Design"],
+      tags: ["RAG", "LLM", "GEMINI", "Responsive Design"],
       demoLink: "#",
       codeLink: "#"
     },
     {
       id: 5,
-      title: "InfoGator News Platform",
-      category: "Mobile Application",
-      description: "Modern news aggregation platform with personalized content feeds and real-time updates from multiple sources.",
-      images: [primepassMockupImage], // Replace with actual images
-      tags: ["Java", "XML", "Firebase", "Canva"],
-      demoLink: "#",
+      title: "PRIMEPASS",
+      category: "Web Application / Chrome Extension",
+      description: "PrimePass is a secure Chrome extension that allows users to access premium digital services like Netflix, ChatGPT Plus, Udemy, Canva Pro, and Coursera at up to 95% lower cost. Designed to make top-tier tools affordable and accessible, PrimePass simplifies subscriptions by bringing multiple premium platforms under one dashboard. With seamless integration, verified access, and transparent pricing, PrimePass empowers users to save thousands while enjoying the best digital experiences without compromise.",
+      images: [primepassMockupImage], 
+      tags: ["React", "Javascript", "SQL"],
+      demoLink: "https://primepass.app/",
       codeLink: "#"
     },
     {
       id: 6,
-      title: "Giving Hands Charity",
+      title: "GEARS",
       category: "Web Application",
-      description: "Charitable platform connecting donors with causes, featuring transparent donation tracking and impact metrics.",
-      images: [gearsMockupImage], // Replace with actual images
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      demoLink: "#",
+      description: "Developed the official website for GEARS at Lahore Garrison University, providing a platform to showcase projects, events, and initiatives. The site enables students to access resources, stay updated, and engage with the society’s activities in robotics, AI, and engineering.",
+      images: [gearsMockupImage], 
+      tags: ["React"],
+      demoLink: "https://gears.lgu.edu.pk/",
       codeLink: "#"
     }
   ];
@@ -211,7 +213,7 @@ const Portfolio = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-4xl my-auto bg-portfolio-card rounded-xl sm:rounded-2xl border border-portfolio-accent/30 shadow-2xl overflow-hidden"
+              className="relative w-full max-w-2xl my-auto bg-portfolio-card rounded-xl sm:rounded-2xl border border-portfolio-accent/30 shadow-2xl overflow-hidden"
               onClick={(e) => e.stopPropagation()}
               style={{
                 maxHeight: '95vh',
@@ -269,14 +271,14 @@ const Portfolio = () => {
               </div>
 
               {/* Project Details */}
-              <div className="p-4 sm:p-6 md:p-8">
+              <div className="p-3 sm:p-4 md:p-6">
                 {/* Category Badge */}
                 <Badge variant="secondary" className="mb-2 sm:mb-3 text-xs sm:text-sm">
                   {selectedProjectData.category}
                 </Badge>
 
                 {/* Title */}
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-portfolio-text mb-3 sm:mb-4">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-portfolio-text mb-3 sm:mb-4">
                   {selectedProjectData.title}
                 </h2>
 
