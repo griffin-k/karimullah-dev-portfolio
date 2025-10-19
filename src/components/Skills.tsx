@@ -68,13 +68,44 @@ const SkillsPage = () => {
       activeTab === 'frameworks' ? frameworks :
       tools;
 
-  const testimonials = [
-      { id: 1, name: "Sarah Johnson", role: "Product Manager", avatar: `https://placehold.co/150x150/E2E8F0/4A5568?text=SJ`, rating: 5, text: "Delivered exceptional AI solutions that increased our conversion rates by 40%. Highly professional." },
-      { id: 2, name: "Ahmed Hassan", role: "CEO, Digital Innovations", avatar: `https://placehold.co/150x150/E2E8F0/4A5568?text=AH`, rating: 5, text: "Understood our vision perfectly and created intelligent AI-powered features. Feedback has been amazing." },
-      { id: 3, name: "Emily Chen", role: "Marketing Director", avatar: `https://placehold.co/150x150/E2E8F0/4A5568?text=EC`, rating: 4, text: "Built a chatbot that transformed our customer service, leading to a 60% increase in lead generation." },
-      { id: 4, name: "Omar Al-Rashid", role: "Founder, FinanceFirst", avatar: `https://placehold.co/150x150/E2E8F0/4A5568?text=OA`, rating: 5, text: "Created powerful predictive models for our financial analytics system. Exceptional work." },
-      { id: 5, name: "Lisa Rodriguez", role: "CTO, MedTech Solutions", avatar: `https://placehold.co/150x150/E2E8F0/4A5568?text=LR`, rating: 5, text: "The AI implementation for our healthcare app was outstanding. Balanced complexity with simplicity." }
-  ];
+const testimonials = [
+  { 
+    id: 1, 
+    name: "Zaheer ud Din Akram", 
+    role: "Client", 
+    rating: 5, 
+    text: "Got an AI chatbot built for my business website — it’s incredibly smart and saves so much time handling customer queries. Excellent work and very professional team." 
+  },
+  { 
+    id: 2, 
+    name: "Muhammad Ahmad", 
+    role: "Freelancer", 
+    rating: 5, 
+    text: "Worked on integrating AI tools for one of my web projects. The results were smooth and highly efficient — the chatbot responses felt almost human-like. Loved the experience." 
+  },
+  { 
+    id: 3, 
+    name: "Asaz Manzoor", 
+    role: "Freelancer", 
+    rating: 4, 
+    text: "Collaborated on an AI web assistant project. Everything from the design to the NLP integration was top-notch. Great for businesses wanting automation." 
+  },
+  { 
+    id: 4, 
+    name: "Zafeer Hafeez", 
+    role: "CEO, Vex", 
+    rating: 5, 
+    text: "We implemented an AI chatbot for our platform and saw a major boost in customer engagement. The attention to detail and understanding of our requirements was exceptional." 
+  },
+  { 
+    id: 5, 
+    name: "Tariq Hussain", 
+    role: "Client", 
+    rating: 5, 
+    text: "I needed an AI assistant for my e-commerce store — the chatbot works flawlessly and even learns from customer behavior. Truly impressive work." 
+  }
+];
+
 
   // --- EFFECTS ---
   // Cleanup timeout on unmount
@@ -414,7 +445,7 @@ const SkillsPage = () => {
                         "{testimonial.text}"
                       </blockquote>
                       <div className="flex items-center gap-3 sm:gap-4 pt-4 sm:pt-6 mt-auto border-t border-[rgba(255,255,255,0.1)]">
-                        <img src={testimonial.avatar} alt={testimonial.name} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full shrink-0 bg-slate-300" />
+                        {/* <img src={testimonial.avatar} alt={testimonial.name} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full shrink-0 bg-slate-300" /> */}
                         <div className="min-w-0">
                           <h4 className="text-white font-semibold truncate text-sm sm:text-base">{testimonial.name}</h4>
                           <p className="text-slate-400 text-xs sm:text-sm truncate">{testimonial.role}</p>

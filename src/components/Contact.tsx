@@ -115,8 +115,7 @@ const Contact = () => {
             Let's work together!
           </h2>
           <p className="text-sm sm:text-base text-portfolio-text-muted max-w-xl sm:max-w-2xl mx-auto px-4 sm:px-0">
-            I create simple, functional, and beautiful designs and I love what I do. 
-            Just simple like that!
+           I craft smart systems that learn, adapt, and create value.
           </p>
         </motion.div>
 

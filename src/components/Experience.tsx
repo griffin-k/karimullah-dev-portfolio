@@ -6,26 +6,20 @@ import { Briefcase, GraduationCap } from "lucide-react";
 const Experience = () => {
   const experience = [
     {
-      period: "2025 - Present",
-      title: "AI ENGINEER",
-      company: "Prime Pass | Remote",
+      period: "2024 - 2025",
+      title: "Junior AI Engineer",
+      company: "Vex | Remote",
       type: "experience"
     },
     {
-      period: "2024 - 2025",
-      title: "AI INTERN",
-      company: "Vex CO | Onsite",
-      type: "experience"
-    },
-    {
-      period: "2024 - 2025",
-      title: "LEAD SOFTWARE DEVELOPER",
+      period: "2024 - 2024",
+      title: "Embedded Software Team Lead",
       company: "UAV Tech | Onsite",
       type: "experience"
     },
     {
-      period: "2023 - 2024",
-      title: "JR SOFTWARE DEVELOPER",
+      period: "2023 - 2023",
+      title: "Embedded Systems Intern",
       company: "Techno Craft | Onsite",
       type: "experience"
     }
@@ -39,7 +33,7 @@ const Experience = () => {
       type: "education"
     },
     {
-      period: "2023 - 2024",
+      period: "2025",
       title: "GENERATIVE AI COURSE",
       company: "Udemy",
       type: "education"

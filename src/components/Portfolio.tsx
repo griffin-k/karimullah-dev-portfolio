@@ -144,7 +144,7 @@ const Portfolio = () => {
             My Recent Works
           </h2>
           <p className="text-sm sm:text-base text-portfolio-text-muted max-w-xl sm:max-w-2xl mx-auto px-4 sm:px-0">
-            Here are some of my recent projects that showcase my skills in UI/UX Designing
+            Here are some of my recent projects that showcase my skills in AI/Web
           </p>
         </motion.div>
 

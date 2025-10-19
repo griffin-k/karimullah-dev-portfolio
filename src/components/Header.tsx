@@ -133,8 +133,8 @@ const Header = () => {
               onClick={() => {
                 // Create a temporary link to download the CV
                 const link = document.createElement('a');
-                link.href = '/Karimullah_Resume.pdf';
-                link.download = 'Karimullah_Resume.pdf';
+                link.href = '/karimullah-Cv.pdf';
+                link.download = 'karimullah-Cv.pdf';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
