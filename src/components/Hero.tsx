@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Handshake, Github, Linkedin, Instagram } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import profileImage from "@/assets/profile-image.png";
+import profileImage from "@/assets/karimullah-dp.jpeg";
 
 
 
@@ -54,8 +54,8 @@ const Hero = () => {
       `}</style>
       <div className="hero-particle" style={{width:32,height:32,top:'12%',left:'8%'}} />
       <div className="hero-particle" style={{width:18,height:18,top:'22%',left:'70%'}} />
-      <div className="hero-particle" style={{width:24,height:24,top:'68%',left:'18%'}} />
-      <div className="hero-particle" style={{width:14,height:14,top:'80%',left:'60%'}} />
+      {/* <div className="hero-particle" style={{width:24,height:24,top:'68%',left:'18%'}} />
+      <div className="hero-particle" style={{width:14,height:14,top:'80%',left:'60%'}} /> */}
       {/* --- Hero Main Content --- */}
       <div className="flex-1 container mx-auto max-w-7xl w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">

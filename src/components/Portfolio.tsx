@@ -48,8 +48,8 @@ const Portfolio = () => {
       tags: [
         "Python", "FastAPI", "Flask", "LLMs", "LLaMA 3", "Mistral", "Gemini", "LangChain", "RAG", "Vector DB", "Computer Vision", "Object Detection", "Face Recognition", "Edge AI", "Raspberry Pi 5", "Sensors", "Multimodal"
       ],
-      demoLink: "#",
-      codeLink: "#"
+      demoLink: "https://www.linkedin.com/posts/karimullah36_wrapping-up-my-bs-journey-with-something-activity-7386324399278198784-V3rX?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEZ1eT4BC9hfOZVSrJ61WuYAQSmeN-vDvdo",
+      codeLink: "https://github.com/griffin-k"
     },
     {
       id: 2,
@@ -59,7 +59,7 @@ const Portfolio = () => {
       images: [alalimMockupImage,alalimImage1, alalimImage2, alalimImage3],
       tags: ["Dashboard Design", "Information Architecture", "RAG","Vector Database", "Usability Testing"],
       demoLink: "#",
-      codeLink: "#"
+      codeLink: "https://github.com/griffin-k"
     },
     {
       id: 3,
@@ -69,7 +69,7 @@ const Portfolio = () => {
       images: [glsmMockupImage],
       tags: ["LLMS", "Tailwind", "Prototyping", "Interface Design"],
       demoLink: "#",
-      codeLink: "#"
+      codeLink: "https://github.com/griffin-k"
     },
     {
       id: 4,
@@ -79,7 +79,7 @@ const Portfolio = () => {
       images: [gorbitMockupImage],
       tags: ["RAG", "LLM", "GEMINI", "Responsive Design"],
       demoLink: "#",
-      codeLink: "#"
+      codeLink: "https://github.com/griffin-k"
     },
     {
       id: 5,
@@ -99,7 +99,7 @@ const Portfolio = () => {
       images: [gearsMockupImage], 
       tags: ["React"],
       demoLink: "https://gears.lgu.edu.pk/",
-      codeLink: "#"
+      codeLink: "https://github.com/griffin-k"
     }
   ];
 
